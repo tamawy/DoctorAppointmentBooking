@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAppointmentBooking.Api", "DoctorAppointmentBooking.Api\DoctorAppointmentBooking.Api.csproj", "{94CA7795-9877-46D5-9179-F4B5687AD401}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoctorAvailability", "DoctorAvailability", "{5EE9B82C-D5EE-4AF2-B1C6-2DC34EBB357E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Shared", "Modules\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj", "{5938462C-6488-408D-A5E7-B98209068C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal", "Modules\DoctorAvailability\Internal\DoctorAvailability.Internal\DoctorAvailability.Internal.csproj", "{CE78B586-BB24-499B-8A74-8D167B50E73F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{A7A28F1C-3066-49FC-88B3-771C45E281F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{F3BCCA43-9DDD-4172-BEAA-5149DE17D2A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +25,22 @@ Global
 		{94CA7795-9877-46D5-9179-F4B5687AD401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94CA7795-9877-46D5-9179-F4B5687AD401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94CA7795-9877-46D5-9179-F4B5687AD401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5938462C-6488-408D-A5E7-B98209068C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5938462C-6488-408D-A5E7-B98209068C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5938462C-6488-408D-A5E7-B98209068C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5938462C-6488-408D-A5E7-B98209068C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE78B586-BB24-499B-8A74-8D167B50E73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE78B586-BB24-499B-8A74-8D167B50E73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE78B586-BB24-499B-8A74-8D167B50E73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE78B586-BB24-499B-8A74-8D167B50E73F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EE9B82C-D5EE-4AF2-B1C6-2DC34EBB357E} = {F3BCCA43-9DDD-4172-BEAA-5149DE17D2A3}
+		{5938462C-6488-408D-A5E7-B98209068C7C} = {5EE9B82C-D5EE-4AF2-B1C6-2DC34EBB357E}
+		{CE78B586-BB24-499B-8A74-8D167B50E73F} = {A7A28F1C-3066-49FC-88B3-771C45E281F4}
+		{A7A28F1C-3066-49FC-88B3-771C45E281F4} = {5EE9B82C-D5EE-4AF2-B1C6-2DC34EBB357E}
 	EndGlobalSection
 EndGlobal
