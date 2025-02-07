@@ -4,6 +4,6 @@
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        ICollection<TimeSlot> TimeSlots { get; set; }
+        ICollection<TimeSlot> TimeSlots { get; set; } = new HashSet<TimeSlot>();
     }
 }

@@ -5,23 +5,14 @@ using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Shared.Handlers.Commands
 {
-    public class TimeSlotCommandHandler : ITimeSlotCommand
+    public class TimeSlotCommandHandler(TimeSlotsDAL timeSlotDal, DoctorsDal doctorsDal) : ITimeSlotCommand
     {
-        private readonly TimeSlotsDAL timeSlotDAL;
-        private readonly DoctorsDAL doctorsDAL;
-
-        public TimeSlotCommandHandler(TimeSlotsDAL timeSlotDAL, DoctorsDAL doctorsDAL)
-        {
-            this.timeSlotDAL = timeSlotDAL;
-            this.doctorsDAL = doctorsDAL;
-        }
-
         public void AddTimeSlot(TimeSlotRequest timeSlot)
         {
-            timeSlotDAL.AddTimeSlot(new TimeSlot()
+            timeSlotDal.AddTimeSlot(new TimeSlot()
             {
                 Id = Guid.NewGuid(),
-                DoctorId = doctorsDAL.GetCurrentDoctorId(),
+                DoctorId = doctorsDal.GetCurrentDoctorId(),
                 Time = timeSlot.Time,
                 IsReserved = false,
                 Cost = timeSlot.Cost

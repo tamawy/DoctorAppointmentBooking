@@ -4,21 +4,25 @@ using DoctorAvailability.Internal.Models;
 
 namespace DoctorAvailability.Internal.DAL
 {
-    public class DoctorsDAL
+    public class DoctorsDal(ApplicationDbContext context)
     {
-        public ApplicationDbContext _context;
-        public DoctorsDAL(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Get all doctors in the DB
+        /// </summary>
+        /// <returns>List of doctors</returns>
         public List<Doctor> GetDoctors()
         {
-            return [.. _context.Doctors];
+            return [.. context.Doctors];
         }
+
+        /// <summary>
+        /// Add new doctor to the DB
+        /// </summary>
+        /// <param name="doctor">instance of Doctor model</param>
         public void AddDoctor(Doctor doctor)
         {
-            _context.Doctors.Add(doctor);
-            _context.SaveChanges();
+            context.Doctors.Add(doctor);
+            context.SaveChanges();
         }
         public Guid GetCurrentDoctorId()
         {

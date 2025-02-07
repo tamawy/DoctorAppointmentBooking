@@ -4,18 +4,19 @@ using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Shared.Handlers.Queries
 {
-    public class TimeSlotQueryHandler : ITimeSlotQuery
+    public class TimeSlotQueryHandler(TimeSlotsDAL timeSlotDal) : ITimeSlotQuery
     {
-        private readonly TimeSlotsDAL timeSlotDAL;
-
-        public TimeSlotQueryHandler(TimeSlotsDAL timeSlotDAL)
-        {
-            this.timeSlotDAL = timeSlotDAL;
-        }
         public IEnumerable<TimeSlotResponse> GetAllTimeSlots()
         {
-            return timeSlotDAL
+            return timeSlotDal
                 .GetTimeSlots()
+                .Select(TimeSlotResponse.FromTimeSlot);
+        }
+
+        public IEnumerable<TimeSlotResponse> GetAvailableTimeSlot()
+        {
+            return timeSlotDal.GetTimeSlots()
+                .Where(s => !s.IsReserved)
                 .Select(TimeSlotResponse.FromTimeSlot);
         }
     }

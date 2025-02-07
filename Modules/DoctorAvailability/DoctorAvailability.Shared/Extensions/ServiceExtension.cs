@@ -19,7 +19,7 @@ namespace DoctorAvailability.Shared.Extensions
         }
         public static void ConfigureDoctorAvailabilityScope(this IServiceCollection services)
         {
-            services.AddScoped<DoctorsDAL>();
+            services.AddScoped<DoctorsDal>();
             services.AddScoped<TimeSlotsDAL>();
             services.AddScoped<ITimeSlotCommand, TimeSlotCommandHandler>();
             services.AddScoped<ITimeSlotQuery, TimeSlotQueryHandler>();
