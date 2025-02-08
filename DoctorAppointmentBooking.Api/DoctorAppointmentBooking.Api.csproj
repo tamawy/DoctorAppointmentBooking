@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
+    <ProjectReference Include="..\Modules\AppointmentBooking\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
     <ProjectReference Include="..\Modules\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Outgoing\**" />
+    <EmbeddedResource Remove="Outgoing\**" />
+    <None Remove="Outgoing\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
+    <ProjectReference Include="..\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentBooking", "Appoi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{D9FD6727-6EA4-4060-9EED-AA3D66B04A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Shared", "AppointmentBooking.Shared\AppointmentBooking.Shared.csproj", "{E3C4FD50-6B6A-4E06-94EC-689D679BA17A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Shared", "Modules\AppointmentBooking\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj", "{E3C4FD50-6B6A-4E06-94EC-689D679BA17A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Domain", "AppointmentBooking.Domain\AppointmentBooking.Domain.csproj", "{95C7F88D-E9F9-4286-A53C-C67A7629E552}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Domain", "Modules\AppointmentBooking\Internal\AppointmentBooking.Domain\AppointmentBooking.Domain.csproj", "{95C7F88D-E9F9-4286-A53C-C67A7629E552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Application", "AppointmentBooking.Application\AppointmentBooking.Application.csproj", "{EB021A8D-D68B-48D9-9FE2-DAC4E9388F39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Application", "Modules\AppointmentBooking\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj", "{EB021A8D-D68B-48D9-9FE2-DAC4E9388F39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Infrastructure", "AppointmentBooking.Infrastructure\AppointmentBooking.Infrastructure.csproj", "{A5B41752-A197-481E-8115-4FCCCECD044B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Infrastructure", "Modules\AppointmentBooking\Internal\AppointmentBooking.Infrastructure\AppointmentBooking.Infrastructure.csproj", "{A5B41752-A197-481E-8115-4FCCCECD044B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B49B7E33-B3A1-4BD7-A58C-7F88C7292307}"
 EndProject

@@ -6,16 +6,19 @@ namespace DoctorAvailability.Shared.Handlers.Queries
 {
     internal class TimeSlotQueryHandler : ITimeSlotQuery
     {
+        private TimeSlotsDAL _timeSlotDal;
+
+        public TimeSlotQueryHandler(TimeSlotsDAL timeSlotDal) => _timeSlotDal = timeSlotDal;
         public IEnumerable<TimeSlotResponse> GetAllTimeSlots()
         {
-            return timeSlotDal
+            return _timeSlotDal
                 .GetTimeSlots()
                 .Select(TimeSlotResponse.FromTimeSlot);
         }
 
         public IEnumerable<TimeSlotResponse> GetAvailableTimeSlot()
         {
-            return timeSlotDal.GetTimeSlots()
+            return _timeSlotDal.GetTimeSlots()
                 .Where(s => !s.IsReserved)
                 .Select(TimeSlotResponse.FromTimeSlot);
         }
