@@ -5,7 +5,7 @@ using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Shared.Handlers.Commands
 {
-    public class TimeSlotCommandHandler : ITimeSlotCommand
+    internal class TimeSlotCommandHandler : ITimeSlotCommand
     {
         private readonly TimeSlotsDAL timeSlotDAL;
         private readonly DoctorsDAL doctorsDAL;
