@@ -4,7 +4,7 @@ using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Shared.Handlers.Queries
 {
-    public class TimeSlotQueryHandler(TimeSlotsDAL timeSlotDal) : ITimeSlotQuery
+    internal class TimeSlotQueryHandler : ITimeSlotQuery
     {
         public IEnumerable<TimeSlotResponse> GetAllTimeSlots()
         {
