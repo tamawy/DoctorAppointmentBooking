@@ -18,5 +18,10 @@ namespace DoctorAvailability.Shared.Handlers.Commands
                 Cost = timeSlot.Cost
             });
         }
+
+        public async Task MarkSlotAsReserved(Guid? slotId)
+        {
+            await timeSlotDal.MarkSlotAsReserved(slotId);
+        }
     }
 }

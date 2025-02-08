@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
+    <ProjectReference Include="..\Modules\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Outgoing\" />
+  </ItemGroup>
+
 </Project>

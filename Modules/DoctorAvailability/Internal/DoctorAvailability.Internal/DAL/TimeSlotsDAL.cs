@@ -16,6 +16,15 @@ namespace DoctorAvailability.Internal.DAL
             context.SaveChanges();
         }
 
-        // public void GetAvailableTimeSlot()
+        public async Task MarkSlotAsReserved(Guid? slotId)
+        {
+            var slot = await context.TimeSlots.FindAsync(slotId);
+            if (slot != null)
+            {
+                slot.IsReserved = true;
+                context.TimeSlots.Update(slot);
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }
