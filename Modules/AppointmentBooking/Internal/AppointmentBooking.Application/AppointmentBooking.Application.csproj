@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\AppointmentBooking\Quieries\**" />
+    <Compile Remove="Features\AvailableSlots\Commands\**" />
     <Compile Remove="Queries\**" />
+    <EmbeddedResource Remove="Features\AppointmentBooking\Quieries\**" />
+    <EmbeddedResource Remove="Features\AvailableSlots\Commands\**" />
     <EmbeddedResource Remove="Queries\**" />
+    <None Remove="Features\AppointmentBooking\Quieries\**" />
+    <None Remove="Features\AvailableSlots\Commands\**" />
     <None Remove="Queries\**" />
   </ItemGroup>
 
@@ -18,11 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AppointmentBooking.Domain\AppointmentBooking.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\AppointmentBooking\Quieries\" />
-    <Folder Include="Features\AvailableSlots\Commands\" />
   </ItemGroup>
 
 </Project>

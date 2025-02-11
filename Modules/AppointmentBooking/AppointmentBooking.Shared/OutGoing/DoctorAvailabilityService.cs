@@ -2,7 +2,7 @@
 using AppointmentBooking.Application.Interfaces.Services;
 using DoctorAvailability.Shared.Interfaces;
 
-namespace AppointmentBooking.Shared.Incoming
+namespace AppointmentBooking.Shared.OutGoing
 {
     internal class DoctorAvailabilityService(ITimeSlotQuery slotQuery) : IDoctorAvailabilityService
     {

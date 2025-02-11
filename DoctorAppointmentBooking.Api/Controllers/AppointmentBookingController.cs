@@ -1,11 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AppointmentBooking.Shared.Incoming.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorAppointmentBooking.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/AppointmentBooking")]
     [ApiController]
-    public class AppointmentBookingController : ControllerBase
+    public class AppointmentBookingController(IAvailableSlotsService availableSlotsService) : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var availableSlots = await availableSlotsService.GetAvailableSlotsAsync();
+            if (availableSlots is null) return NotFound("No slots are available yet!");
+            return Ok(availableSlots);
+        }
     }
 }

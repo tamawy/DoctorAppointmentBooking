@@ -2,7 +2,7 @@
 
 namespace AppointmentBooking.Shared.Incoming.Interfaces
 {
-    internal interface IAvailableSlotsService
+    public interface IAvailableSlotsService
     {
         public Task<IEnumerable<TimeSlotDto?>> GetAvailableSlotsAsync();
     }

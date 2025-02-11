@@ -6,17 +6,9 @@ namespace DoctorAppointmentBooking.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DoctorAvailabilityController : ControllerBase
+    public class DoctorAvailabilityController(ITimeSlotCommand timeSlotCommandApi, ITimeSlotQuery timeSlotQueryApi)
+        : ControllerBase
     {
-        private readonly ITimeSlotCommand timeSlotCommandApi;
-        private readonly ITimeSlotQuery timeSlotQueryApi;
-
-        public DoctorAvailabilityController
-            (ITimeSlotCommand timeSlotCommandApi, ITimeSlotQuery timeSlotQueryApi)
-        {
-            this.timeSlotCommandApi = timeSlotCommandApi;
-            this.timeSlotQueryApi = timeSlotQueryApi;
-        }
         // GET: api/<DoctorAvailabilityController>
         [HttpGet]
         public IEnumerable<TimeSlotResponse> Get()

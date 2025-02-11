@@ -5,8 +5,7 @@ namespace AppointmentBooking.Infrastructure.Repositories
 {
     public class AppointmentRepository(AppDbContext context) : IAppointmentRepository
     {
-        public async Task<Guid?> 
-            BookAppointmentAsync(Guid slotId, Guid patientId, string patientName)
+        public async Task<Guid?> BookAppointmentAsync(Guid slotId, Guid patientId, string patientName)
         {
             if (!IsSlotAvailable(slotId)) return null;
             var reservedAppointment = new Appointment
@@ -21,7 +20,7 @@ namespace AppointmentBooking.Infrastructure.Repositories
             return reservedAppointment.Id;
         }
 
-        private bool IsSlotAvailable(Guid slotId) 
+        private bool IsSlotAvailable(Guid slotId)
             => context.Appointments.Any(s => s.SlotId == slotId);
 
     }

@@ -1,3 +1,4 @@
+using AppointmentBooking.Shared.Extensions;
 using DoctorAppointmentBooking.Api.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureDoctorAvailability();
-
+builder.Services.AddAppointmentBooking();
 
 var app = builder.Build();
 
