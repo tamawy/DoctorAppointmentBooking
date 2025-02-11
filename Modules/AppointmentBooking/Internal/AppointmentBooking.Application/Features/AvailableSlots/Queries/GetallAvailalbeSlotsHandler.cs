@@ -7,7 +7,7 @@ namespace AppointmentBooking.Application.Features.AvailableSlots.Queries
     public class GetAllAvailableSlotsQuery : IRequest<IEnumerable<TimeSlotDto?>>
     {
     }
-    internal class GetAllAvailableSlotsHandler(IDoctorAvailabilityService doctorAvailability) : IRequestHandler<GetAllAvailableSlotsQuery, IEnumerable<TimeSlotDto?>>
+    public class GetAllAvailableSlotsHandler(IDoctorAvailabilityService doctorAvailability) : IRequestHandler<GetAllAvailableSlotsQuery, IEnumerable<TimeSlotDto?>>
     {
         public async Task<IEnumerable<TimeSlotDto?>> Handle(GetAllAvailableSlotsQuery request, CancellationToken cancellationToken)
         {

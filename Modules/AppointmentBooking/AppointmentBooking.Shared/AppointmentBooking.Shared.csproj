@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Incoming\" />
-  </ItemGroup>
-
 </Project>

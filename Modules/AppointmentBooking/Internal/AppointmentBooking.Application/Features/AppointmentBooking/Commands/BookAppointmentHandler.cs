@@ -3,13 +3,13 @@ using MediatR;
 
 namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
 {
-    internal class BookAppointmentCommand : IRequest<Guid?>
+    public class BookAppointmentCommand : IRequest<Guid?>
     {
         public Guid SlotId { get; set; }
         public Guid PatientId { get; set; }
         public required string PatientName { get; set; }
     }
-    internal class BookAppointmentHandler(IAppointmentRepository appointmentRepository) : IRequestHandler<BookAppointmentCommand, Guid?>
+    public class BookAppointmentHandler(IAppointmentRepository appointmentRepository) : IRequestHandler<BookAppointmentCommand, Guid?>
     {
         public async Task<Guid?> Handle(BookAppointmentCommand request, CancellationToken cancellationToken)
         {
