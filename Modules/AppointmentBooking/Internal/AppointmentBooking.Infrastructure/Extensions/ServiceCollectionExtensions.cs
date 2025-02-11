@@ -1,4 +1,4 @@
-﻿using AppointmentBooking.Application.Interfaces;
+﻿using AppointmentBooking.Application.Interfaces.Repositories;
 using AppointmentBooking.Infrastructure.Persistence;
 using AppointmentBooking.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;

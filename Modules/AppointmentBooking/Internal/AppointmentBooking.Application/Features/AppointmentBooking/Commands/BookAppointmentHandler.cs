@@ -1,4 +1,4 @@
-﻿using AppointmentBooking.Application.Interfaces;
+﻿using AppointmentBooking.Application.Interfaces.Repositories;
 using MediatR;
 
 namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
@@ -17,6 +17,7 @@ namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
                 await appointmentRepository.BookAppointmentAsync(request.SlotId, request.PatientId,
                     request.PatientName);
             if (appointmentId == null) throw new InvalidOperationException();
+            // Notify that a slot has been booked
             return appointmentId;
         }
     }

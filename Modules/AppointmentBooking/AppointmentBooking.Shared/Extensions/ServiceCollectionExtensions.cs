@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AppointmentBooking.Application.Extensions
+namespace AppointmentBooking.Shared.Extensions
 {
     public static class ServiceCollectionExtensions
     {

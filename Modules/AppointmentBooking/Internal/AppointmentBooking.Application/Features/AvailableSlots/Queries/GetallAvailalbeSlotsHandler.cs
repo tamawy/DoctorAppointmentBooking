@@ -1,5 +1,5 @@
 ﻿using AppointmentBooking.Application.Dto;
-using AppointmentBooking.Application.Interfaces;
+using AppointmentBooking.Application.Interfaces.Services;
 using MediatR;
 
 namespace AppointmentBooking.Application.Features.AvailableSlots.Queries

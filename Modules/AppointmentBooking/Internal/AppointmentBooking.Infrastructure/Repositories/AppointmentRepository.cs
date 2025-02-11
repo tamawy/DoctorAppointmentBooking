@@ -1,11 +1,12 @@
-﻿using AppointmentBooking.Application.Interfaces;
+﻿using AppointmentBooking.Application.Interfaces.Repositories;
 using AppointmentBooking.Infrastructure.Persistence;
 
 namespace AppointmentBooking.Infrastructure.Repositories
 {
     public class AppointmentRepository(AppDbContext context) : IAppointmentRepository
     {
-        public async Task<Guid?> BookAppointmentAsync(Guid slotId, Guid patientId, string patientName)
+        public async Task<Guid?> 
+            BookAppointmentAsync(Guid slotId, Guid patientId, string patientName)
         {
             if (!IsSlotAvailable(slotId)) return null;
             var reservedAppointment = new Appointment
@@ -17,12 +18,11 @@ namespace AppointmentBooking.Infrastructure.Repositories
             };
             context.Appointments.Add(reservedAppointment);
             await context.SaveChangesAsync();
-            // TODO: Finid a better implemenetation
-            //await slotCommand.MarkSlotAsReserved(slotId);
             return reservedAppointment.Id;
         }
 
-        private bool IsSlotAvailable(Guid slotId) => true; // TODO: Implement this
+        private bool IsSlotAvailable(Guid slotId) 
+            => context.Appointments.Any(s => s.SlotId == slotId);
 
     }
 }

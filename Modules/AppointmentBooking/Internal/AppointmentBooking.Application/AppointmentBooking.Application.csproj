@@ -20,4 +20,9 @@
     <ProjectReference Include="..\AppointmentBooking.Domain\AppointmentBooking.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\AppointmentBooking\Quieries\" />
+    <Folder Include="Features\AvailableSlots\Commands\" />
+  </ItemGroup>
+
 </Project>

@@ -7,14 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Outgoing\**" />
-    <EmbeddedResource Remove="Outgoing\**" />
-    <None Remove="Outgoing\**" />
+    <ProjectReference Include="..\..\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
+    <ProjectReference Include="..\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
-    <ProjectReference Include="..\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
+    <Folder Include="Incoming\" />
   </ItemGroup>
 
 </Project>

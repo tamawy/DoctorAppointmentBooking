@@ -1,4 +1,4 @@
-﻿namespace AppointmentBooking.Application.Interfaces
+﻿namespace AppointmentBooking.Application.Interfaces.Repositories
 {
     public interface IAppointmentRepository
     {
