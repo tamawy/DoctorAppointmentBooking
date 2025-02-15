@@ -11,7 +11,7 @@ namespace DoctorAvailability.API.Controllers
     {
         // GET: api/<DoctorAvailabilityController>
         [HttpGet]
-        public IEnumerable<TimeSlotResponse> Get()
+        public IEnumerable<TimeSlotDTO> Get()
         {
             return timeSlotQueryApi.GetAllTimeSlots();
         }

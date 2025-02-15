@@ -1,5 +1,5 @@
-﻿using AppointmentBooking.Shared.Dto;
-using AppointmentBooking.Shared.OutGoing;
+﻿using AppointmentBooking.Application.Dto;
+using AppointmentBooking.Application.Interfaces.Services;
 using MediatR;
 
 namespace AppointmentBooking.Application.Features.AvailableSlots.Queries
@@ -7,12 +7,12 @@ namespace AppointmentBooking.Application.Features.AvailableSlots.Queries
     public class GetAllAvailableSlotsQuery : IRequest<IEnumerable<TimeSlotDto?>>
     {
     }
-    public class GetAllAvailableSlotsHandler(IDoctorAvailabilityService doctorAvailability) : IRequestHandler<GetAllAvailableSlotsQuery, IEnumerable<TimeSlotDto?>>
+    public class GetAllAvailableSlotsHandler(IAvailableSlotsService availableSlots) : IRequestHandler<GetAllAvailableSlotsQuery, IEnumerable<TimeSlotDto?>>
     {
         public async Task<IEnumerable<TimeSlotDto?>> Handle(GetAllAvailableSlotsQuery request, CancellationToken cancellationToken)
         {
-            var availableSlots = await doctorAvailability.GetAllAvailableSlots();
-            return availableSlots;
+            var available = await availableSlots.GetAvailableSlotsAsync();
+            return available;
         }
     }
 }

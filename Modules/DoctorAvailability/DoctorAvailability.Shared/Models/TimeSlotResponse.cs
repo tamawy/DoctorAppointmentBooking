@@ -8,17 +8,17 @@
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public bool IsReserved { get; set; }
-        public static TimeSlotResponse FromTimeSlot(TimeSlotDto timeSlot)
-        {
-            return new TimeSlotResponse
-            {
-                Id = timeSlot.Id,
-                Time = timeSlot.Time,
-                DoctorId = timeSlot.DoctorId,
-                Name = timeSlot.Doctor.Name,
-                Cost = timeSlot.Cost,
-                IsReserved = timeSlot.IsReserved
-            };
-        }
+        //public static TimeSlotDTO FromTimeSlot(TimeSlotDTO timeSlot)
+        //{
+        //    return new TimeSlotDTO
+        //    {
+        //        Id = timeSlot.Id,
+        //        Time = timeSlot.Time,
+        //        DoctorId = timeSlot.DoctorId,
+        //        Name = timeSlot.Doctor.Name,
+        //        Cost = timeSlot.Cost,
+        //        IsReserved = timeSlot.IsReserved
+        //    };
+        //}
     }
 }

@@ -1,4 +1,4 @@
-﻿using AppointmentBooking.Application.Interfaces.Repositories;
+﻿using AppointmentBooking.Application.Interfaces.Services;
 using AppointmentBooking.Infrastructure.Persistence;
 
 namespace AppointmentBooking.Infrastructure.Repositories
@@ -7,7 +7,7 @@ namespace AppointmentBooking.Infrastructure.Repositories
     {
         public async Task<Guid?> BookAppointmentAsync(Guid slotId, Guid patientId, string patientName)
         {
-            if (!IsSlotReserved(slotId)) return null;
+            if (IsSlotReserved(slotId)) return null;
             var reservedAppointment = new Appointment
             {
                 Id = Guid.NewGuid(),

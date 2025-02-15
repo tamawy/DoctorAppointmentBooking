@@ -7,21 +7,19 @@ namespace DoctorAvailability.Internal.Handlers.Queries
 {
     internal class TimeSlotQueryHandler(TimeSlotsDAL timeSlotDal, IMapper mapper) : ITimeSlotQuery
     {
-        public IEnumerable<TimeSlotResponse> GetAllTimeSlots()
+        public IEnumerable<TimeSlotDTO> GetAllTimeSlots()
         {
             var timeSlots = timeSlotDal.GetTimeSlots();
-            var timeSlotResponse = mapper.From(timeSlots).AdaptToType<List<TimeSlotDto>>();
-            return timeSlotResponse
-                .Select(TimeSlotResponse.FromTimeSlot);
+            var timeSlotDto = mapper.From(timeSlots).AdaptToType<IEnumerable<TimeSlotDTO>>();
+            return timeSlotDto;
         }
 
-        public IEnumerable<TimeSlotResponse> GetAvailableTimeSlot()
+        public IEnumerable<TimeSlotDTO> GetAvailableTimeSlot()
         {
             var timeSlots = timeSlotDal.GetTimeSlots();
-            var timeSlotResponse = mapper.From(timeSlots).AdaptToType<List<TimeSlotDto>>();
-            return timeSlotResponse
-                .Where(ts => !ts.IsReserved)
-                .Select(TimeSlotResponse.FromTimeSlot);
+            var timeSlotDto = mapper.From(timeSlots).AdaptToType<IEnumerable<TimeSlotDTO>>();
+            return timeSlotDto
+                .Where(ts => !ts.IsReserved);
         }
     }
 }

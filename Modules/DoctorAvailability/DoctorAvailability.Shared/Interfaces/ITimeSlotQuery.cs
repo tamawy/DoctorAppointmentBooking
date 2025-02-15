@@ -5,7 +5,7 @@ namespace DoctorAvailability.Shared.Interfaces
 {
     public interface ITimeSlotQuery
     {
-        IEnumerable<TimeSlotResponse> GetAllTimeSlots();
-        IEnumerable<TimeSlotResponse> GetAvailableTimeSlot();
+        IEnumerable<TimeSlotDTO> GetAllTimeSlots();
+        IEnumerable<TimeSlotDTO> GetAvailableTimeSlot();
     }
 }

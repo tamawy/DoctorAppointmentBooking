@@ -6,7 +6,7 @@ namespace DoctorAvailability.Internal.DAL
 {
     public class TimeSlotsDAL(ApplicationDbContext context)
     {
-        public List<TimeSlot> GetTimeSlots()
+        public IEnumerable<TimeSlot> GetTimeSlots()
         {
             return [.. context.TimeSlots.Include(s => s.Doctor)];
         }
