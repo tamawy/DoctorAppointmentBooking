@@ -1,6 +1,4 @@
-﻿using DoctorAvailability.Internal.Models;
-
-namespace DoctorAvailability.Shared.Models
+﻿namespace DoctorAvailability.Shared.Models
 {
     public class TimeSlotResponse
     {
@@ -10,7 +8,7 @@ namespace DoctorAvailability.Shared.Models
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public bool IsReserved { get; set; }
-        public static TimeSlotResponse FromTimeSlot(TimeSlot timeSlot)
+        public static TimeSlotResponse FromTimeSlot(TimeSlotDto timeSlot)
         {
             return new TimeSlotResponse
             {

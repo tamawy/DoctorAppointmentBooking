@@ -1,4 +1,4 @@
-﻿namespace AppointmentBooking.Application.Dto
+﻿namespace AppointmentBooking.Shared.Dto
 {
     public class TimeSlotDto
     {

@@ -1,6 +1,6 @@
-﻿using AppointmentBooking.Application.Dto;
+﻿using AppointmentBooking.Shared.Dto;
 
-namespace AppointmentBooking.Application.Interfaces.Services
+namespace AppointmentBooking.Shared.OutGoing
 {
     public interface IDoctorAvailabilityService
     {

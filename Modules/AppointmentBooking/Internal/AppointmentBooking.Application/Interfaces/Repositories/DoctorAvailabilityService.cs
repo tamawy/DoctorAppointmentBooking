@@ -1,10 +1,10 @@
-﻿using AppointmentBooking.Application.Dto;
-using AppointmentBooking.Application.Interfaces.Services;
+﻿using AppointmentBooking.Shared.Dto;
+using AppointmentBooking.Shared.OutGoing;
 using DoctorAvailability.Shared.Interfaces;
 
-namespace AppointmentBooking.Shared.OutGoing
+namespace AppointmentBooking.Application.Interfaces.Repositories
 {
-    internal class DoctorAvailabilityService(ITimeSlotQuery slotQuery) : IDoctorAvailabilityService
+    public class DoctorAvailabilityService(ITimeSlotQuery slotQuery) : IDoctorAvailabilityService
     {
         public Task<IEnumerable<TimeSlotDto>> GetAllAvailableSlots()
         {

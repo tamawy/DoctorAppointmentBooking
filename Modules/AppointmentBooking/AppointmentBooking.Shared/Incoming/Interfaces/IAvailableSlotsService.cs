@@ -1,4 +1,5 @@
-﻿using AppointmentBooking.Application.Dto;
+﻿
+using AppointmentBooking.Shared.Dto;
 
 namespace AppointmentBooking.Shared.Incoming.Interfaces
 {
