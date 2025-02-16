@@ -17,21 +17,6 @@ namespace DoctorAvailability.API.Extensions
             builder.AddApplicationPart(typeof(DoctorAvailabilityController).Assembly).AddControllersAsServices();
         }
 
-        //public static void AddDoctorAvailabilityApi(this IServiceCollection services)
-        //{
-        //    services.AddDoctorAvailability();
-        //    services.ConfigureDoctorAvailabilityDb();
-        //}
-
-        //public void AddControllers(IMvcBuilder mvcBuilder)
-        //{
-        //    mvcBuilder.AddApplicationPart(typeof(ServiceCollectionExtensions).Assembly);
-        //}
-
-        //public void RegisterModule(IServiceCollection services)
-        //{
-        //    services.ConfigureDoctorAvailabilityDb();
-        //    services.AddDoctorAvailability();
-        //}
+        
     }
 }

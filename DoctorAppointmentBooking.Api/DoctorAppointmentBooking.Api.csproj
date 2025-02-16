@@ -17,5 +17,9 @@
 		<ProjectReference Include="..\Modules\DoctorAvailability\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
 		<ProjectReference Include="..\Shared\Shared.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Controllers\" />
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
 
 </Project>
