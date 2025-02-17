@@ -29,7 +29,6 @@ namespace AppointmentBooking.Infrastructure.Extensions
             services.AddScoped<IAvailableSlotsService, AvailableTimeSlotsService>();
             services.AddScoped<IAvailableSlots, AvailableSlotService>();
             services.AddScoped<IEventPublisher, PublishingService>();
-            services.AddScoped<IAppointmentBookingEvent, AppointmentBookingEvent>();
             // Register mapster
             var config = TypeAdapterConfig.GlobalSettings;
             services.AddSingleton(config);

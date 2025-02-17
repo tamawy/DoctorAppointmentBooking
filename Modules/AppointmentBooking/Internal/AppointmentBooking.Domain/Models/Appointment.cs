@@ -12,7 +12,7 @@ public class Appointment
     public DateTime? ReservedAt { get; set; } = DateTime.Now;
     // Navigation properties
     public Patient? Patient { get; set; }
-    
+
     // Domain events
     private static readonly List<IAppointmentBookingEvent> _domainEvents = new();
     public IList<IAppointmentBookingEvent> DomainEvents => _domainEvents.AsReadOnly();
@@ -30,7 +30,7 @@ public class Appointment
         ReservedAt = reservedAt ?? DateTime.Now;
         // Add any validations 
     }
-    
+
     // Factory method
     public static Appointment Book(Guid slotId, Guid patientId, string patientName, string doctorName, DateTime? reservedAt)
     {
@@ -40,7 +40,7 @@ public class Appointment
         Subscribe(domainEvent);
         return appointment;
     }
-    
-    private static void Subscribe(IAppointmentBookingEvent observer) => _domainEvents.Add(observer);
+
+    private static void Subscribe(IAppointmentBookingEvent appointmentEvent) => _domainEvents.Add(appointmentEvent);
 }
 

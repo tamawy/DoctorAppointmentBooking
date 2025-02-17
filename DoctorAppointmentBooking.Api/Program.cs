@@ -1,4 +1,5 @@
 ﻿using AppointmentBooking.Shared.Extensions;
+using AppointmentConfirmation.Extensions;
 using DoctorAvailability.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,10 @@ var mvcBuilder = builder.Services.AddControllers();
 // Configure Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddAppointmentConfirmation();
+
 
 // Dynamically register modules
 var registerTypes = AppDomain.CurrentDomain.GetAssemblies()

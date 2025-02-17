@@ -2,7 +2,7 @@ using AppointmentBooking.Shared.Events;
 
 namespace AppointmentBooking.Shared.OutGoing;
 
-public interface IEventHandler<T> where T : IAppointmentBookingEvent
+public interface IEventHandler
 {
-    void Handle(T bookingEvent);
+    void Handle(IAppointmentBookingEvent bookingEvent);
 }
