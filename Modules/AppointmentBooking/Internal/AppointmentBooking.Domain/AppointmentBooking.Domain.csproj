@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
     <ProjectReference Include="..\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
   </ItemGroup>
 

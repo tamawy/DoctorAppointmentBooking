@@ -3,6 +3,7 @@ using AppointmentBooking.Application.Features.AvailableSlots.Queries;
 using AppointmentBooking.Application.Interfaces.Services;
 using AppointmentBooking.Infrastructure.Persistence;
 using AppointmentBooking.Infrastructure.Repositories;
+using AppointmentBooking.Shared.Events;
 using AppointmentBooking.Shared.Incoming.Implementation;
 using AppointmentBooking.Shared.Incoming.Interfaces;
 using Mapster;
@@ -27,6 +28,8 @@ namespace AppointmentBooking.Infrastructure.Extensions
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<IAvailableSlotsService, AvailableTimeSlotsService>();
             services.AddScoped<IAvailableSlots, AvailableSlotService>();
+            services.AddScoped<IEventPublisher, PublishingService>();
+            services.AddScoped<IAppointmentBookingEvent, AppointmentBookingEvent>();
             // Register mapster
             var config = TypeAdapterConfig.GlobalSettings;
             services.AddSingleton(config);

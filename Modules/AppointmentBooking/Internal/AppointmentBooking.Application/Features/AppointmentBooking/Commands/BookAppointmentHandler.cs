@@ -1,4 +1,5 @@
 ﻿using AppointmentBooking.Application.Interfaces.Services;
+using AppointmentBooking.Shared.Events;
 using MediatR;
 
 namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
@@ -9,16 +10,20 @@ namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
         public Guid PatientId { get; set; }
         public required string PatientName { get; set; }
     }
-    public class BookAppointmentHandler(IAppointmentRepository appointmentRepository) : IRequestHandler<BookAppointmentCommand, Guid?>
+    public class BookAppointmentHandler(IAppointmentRepository appointmentRepository, IEventPublisher publisher) : IRequestHandler<BookAppointmentCommand, Guid?>
     {
         public async Task<Guid?> Handle(BookAppointmentCommand request, CancellationToken cancellationToken)
         {
-            var appointmentId =
+            var appointment =
                 await appointmentRepository.BookAppointmentAsync(request.SlotId, request.PatientId,
                     request.PatientName);
-            if (appointmentId == null) throw new InvalidOperationException();
+            if (appointment == null) throw new InvalidOperationException();
             // Notify that a slot has been booked
-            return appointmentId;
+            foreach (var appointmentEvent in appointment.DomainEvents)
+            {
+                publisher.Publish(appointmentEvent);
+            }
+            return appointment.Id;
         }
     }
 }
