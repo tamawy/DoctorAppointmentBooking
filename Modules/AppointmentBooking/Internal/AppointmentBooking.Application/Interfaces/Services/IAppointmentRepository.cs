@@ -2,6 +2,6 @@
 {
     public interface IAppointmentRepository
     {
-        Task<Guid?> BookAppointmentAsync(Guid slotId, Guid patientId, string patientName);
+        Task<Appointment?> BookAppointmentAsync(Guid slotId, Guid patientId, string patientName);
     }
 }
