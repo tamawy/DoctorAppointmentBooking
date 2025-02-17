@@ -8,7 +8,9 @@ namespace AppointmentConfirmation.Extensions
     {
         public static void AddAppointmentConfirmation(this IServiceCollection services)
         {
-            services.AddScoped<IEventHandler, PatientEventHandler>();
+            services.AddScoped<IEventHandler, PatientNotificationHandler>();
+            services.AddScoped<IEventHandler, DoctorNotificationHandler>();
+
         }
     }
 }

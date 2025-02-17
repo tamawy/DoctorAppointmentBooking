@@ -4,10 +4,14 @@ using AppointmentBooking.Shared.OutGoing;
 
 namespace AppointmentBooking.Infrastructure.Repositories;
 
-public class PublishingService(IEventHandler eventHandler) : IEventPublisher
+public class PublishingService(IEnumerable<IEventHandler> eventHandlers) : IEventPublisher
 {
     public void Publish(IAppointmentBookingEvent bookingEvent)
     {
-        eventHandler.Handle(bookingEvent);
+        foreach (var eventHandler in eventHandlers)
+        {
+            eventHandler.Handle(bookingEvent);
+        }
+
     }
 }

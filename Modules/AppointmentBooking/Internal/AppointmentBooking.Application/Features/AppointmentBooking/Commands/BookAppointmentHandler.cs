@@ -8,6 +8,7 @@ namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
     {
         public Guid SlotId { get; set; }
         public Guid PatientId { get; set; }
+        public string DoctorName { get; set; } = default!;
         public required string PatientName { get; set; }
     }
     public class BookAppointmentHandler(IAppointmentRepository appointmentRepository, IEventPublisher publisher) : IRequestHandler<BookAppointmentCommand, Guid?>
@@ -16,7 +17,7 @@ namespace AppointmentBooking.Application.Features.AppointmentBooking.Commands
         {
             var appointment =
                 await appointmentRepository.BookAppointmentAsync(request.SlotId, request.PatientId,
-                    request.PatientName);
+                    request.PatientName, request.DoctorName);
             if (appointment == null) throw new InvalidOperationException();
             // Notify that a slot has been booked
             foreach (var appointmentEvent in appointment.DomainEvents)

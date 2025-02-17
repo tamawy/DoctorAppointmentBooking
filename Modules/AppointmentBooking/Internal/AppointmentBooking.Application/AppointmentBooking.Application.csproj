@@ -9,12 +9,15 @@
   <ItemGroup>
     <Compile Remove="Features\AppointmentBooking\Quieries\**" />
     <Compile Remove="Features\AvailableSlots\Commands\**" />
+    <Compile Remove="Implementation\**" />
     <Compile Remove="Queries\**" />
     <EmbeddedResource Remove="Features\AppointmentBooking\Quieries\**" />
     <EmbeddedResource Remove="Features\AvailableSlots\Commands\**" />
+    <EmbeddedResource Remove="Implementation\**" />
     <EmbeddedResource Remove="Queries\**" />
     <None Remove="Features\AppointmentBooking\Quieries\**" />
     <None Remove="Features\AvailableSlots\Commands\**" />
+    <None Remove="Implementation\**" />
     <None Remove="Queries\**" />
   </ItemGroup>
 
@@ -27,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Implementation\" />
     <Folder Include="Interfaces\Repositories\" />
   </ItemGroup>
 

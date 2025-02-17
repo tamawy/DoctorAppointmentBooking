@@ -3,7 +3,7 @@ using AppointmentBooking.Shared.OutGoing;
 
 namespace AppointmentConfirmation.EventHandlers
 {
-    internal class PatientEventHandler : IEventHandler
+    internal class PatientNotificationHandler : IEventHandler
     {
         public void Handle(IAppointmentBookingEvent bookingEvent)
         {
